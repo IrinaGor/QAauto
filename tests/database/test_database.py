@@ -72,51 +72,49 @@ def test_detailed_orders():
 def test_insert_incorrect_data_type():
     db = Database()
     result = db.insert_incorrect_data_type(100, "Product 100", "Description", {'key': 'value'})
-    assert result  # Перевірка, що функція повертає помилку
     if result is None:
         print("Вставка даних пройшла успішно.")
     else:
         print("Помилка при вставці даних:", result)
-
+    assert result  # Перевірка, що функція повертає помилку
     
 @pytest.mark.database
 def test_insert_integer():
     db = Database()
     result = db.insert_incorrect_data_type(100, "Product 100", "Description", 10)
-    assert result is None
     if result is None:
         print("Числовий тип даних")
     else:
         print("Помилка при вставці даних:", result)
+    assert result is None
 
 @pytest.mark.database
 def test_insert_string():
     db = Database()
     result = db.insert_incorrect_data_type(101, "Product 101", "Description", "string data")
-    assert result 
     if result is None:
         print("Строковий тип даних")
     else:
         print("Помилка при вставці даних:", result)
+    assert result 
 
 @pytest.mark.database
 def test_insert_dict():
     db = Database()
     result = db.insert_incorrect_data_type(102, "Product 102", "Description", {'key': 'value'})
-    assert result  # Перевірка, що функція повертає помилку
     if result is None:
         print("Тип даних: словник")
     else:
         print("Помилка при вставці даних:", result)
+    assert result  # Перевірка, що функція повертає помилку
 
 
 @pytest.mark.database
 def test_insert_float():
     db = Database()
     result = db.insert_incorrect_data_type(103, "Product 103", "Description", 3.14)
-    assert result is None
     if result is None:
         print("Тип даних: float")
     else:
         print("Помилка при вставці даних:", result)
-
+    assert result is None

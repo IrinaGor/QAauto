@@ -1,9 +1,10 @@
-from modules.ui.page_objects.sign_in_page import SignInPage
 import pytest
+from modules.ui.page_objects.sign_in_page import SignInPage
+from modules.ui.page_objects.parcel_tracking import ParselTracking
 
 
 @pytest.mark.ui 
-def test_check_incorrect_username_page_object():
+def test_incorrect_username_page():
     #Створення об'єкту сторінки
     sign_in_page = SignInPage()
 
@@ -19,11 +20,9 @@ def test_check_incorrect_username_page_object():
     #Закриваємо браузер
     sign_in_page.close()
 
-from modules.ui.page_objects.parcel_tracking import ParselTracking
-import pytest
 
 @pytest.mark.ui 
-def test_check_incorrect_parcel_tracking_object():
+def ttest_incorrect_parcel_tracking():
     #Створення об'єкту сторінки
     parsel_tracking_page = ParselTracking()
 
